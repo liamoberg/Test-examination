@@ -1,3 +1,7 @@
 import React from 'react';
 import { render } from 'enzyme';
-import App from '../components/App';
+import Button from '../components/App';
+
+test('renders the app', () => {
+  render(<Button />);
+});

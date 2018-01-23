@@ -1,3 +1,7 @@
 import React from 'react';
 import { render } from 'enzyme';
-import App from '../components/App';
+import AvatarSelector from '../components/App';
+
+test('renders the app', () => {
+  render(<AvatarSelector />);
+});
