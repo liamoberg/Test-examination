@@ -3,10 +3,6 @@ import { render, shallow, mount} from 'enzyme';
 import Posts from '../components/App';
 import CreateNewPost from '../components/CreateNewPost';
 
-test('renders the app', () => {
-  render(<Posts />);
-});
-
 it('Form submit button runs a function', () => {
   const fakeFunction = jest.fn();
   const form = shallow (<CreateNewPost author='hej' updatePosts={fakeFunction} />)
