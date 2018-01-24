@@ -2,10 +2,6 @@ import React from 'react';
 import { render, mount } from 'enzyme';
 import AvatarSelector from '../components/App';
 
-test('renders the avatarSelector', () => {
-  render(<AvatarSelector />);
-});
-
 it('AvatarSelector should be passed a string', () => {
   const testImg = 'Testperson';
   expect(() => AvatarSelector(testImg)).toBeTruthy();
