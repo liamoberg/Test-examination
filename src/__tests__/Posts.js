@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, shallow, mount} from 'enzyme';
-import Posts from '../components/App';
+import Posts from '../components/Posts';
 import CreateNewPost from '../components/CreateNewPost';
+import SinglePost from '../components/SinglePost';
 
 it('Form submit button runs a function', () => {
   const fakeFunction = jest.fn();
@@ -24,4 +25,10 @@ it('Test if onChange sets content to state', () => {
   const content = {target : {name: 'content', value: 'sadasdasd'}};
   form.find('textarea[name="content"]').simulate('change', content);
   expect(form.state().content).toEqual('sadasdasd');
+})
+
+it('Removepost should setPostFromLocalStorage', () => {
+ const wrapper = shallow(<Posts currentPersona="zac" author="cpl" />);
+ wrapper.instance().removePost();
+ expect(wrapper.instance().setPostFromLocalStorage());
 })
