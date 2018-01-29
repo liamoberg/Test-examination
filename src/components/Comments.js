@@ -30,11 +30,6 @@ class Comments extends Component {
         {...comment}
         key={comment.id}
         onClick={this.removeComment}
-        date="sadsad"
-        author="zac"
-        currentPersona="zac"
-        id="1"
-        comment="comment"
       />
     ));
 

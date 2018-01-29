@@ -18,10 +18,10 @@ it('Component should render commentlist', () => {
 
 it('renderCommentList should render <SingleComment(s) />', () => {
     const fakeFunction = jest.fn();
-    const fakeComments = ['fake comment 1','fake comment 2'];
+    const fakeComments = [{id: '1', author:'bu', onClick: fakeFunction, currentPersona: 'zac', comment: 'cpl', date:'sdsad'}];
     const wrapper = shallow(<Comments postId='1' currentPersona="zac" author="dsa" />);
     wrapper.instance().renderCommentList(fakeComments)
-     expect(wrapper.find(<SingleComment onClick={fakeFunction} date="23" currentPersona="asda" author="sad" id="1" comment="A comment" />));
+    expect(wrapper.find(<SingleComment {...fakeComments[0]} />));
 });
 
 it('removeComment should call removeComment from API', () => {
