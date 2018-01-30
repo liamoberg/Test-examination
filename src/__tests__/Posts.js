@@ -32,3 +32,11 @@ it('Removepost should setPostFromLocalStorage', () => {
  wrapper.instance().removePost();
  expect(wrapper.instance().setPostFromLocalStorage());
 })
+
+it('renderPostList should render <SinglePost(s) />', () => {
+  const fakeFunction = jest.fn();
+  const fakePosts = [{id: '1', author:'bu', onClick: fakeFunction, title: 'title', currentPersona: 'zac', content: 'cpl', date:'sdsad'}];
+  const wrapper = shallow(<Posts postId='1' currentPersona="zac" author="dsa" />);
+  wrapper.instance().renderPostList(fakePosts)
+  expect(wrapper.find(<SinglePost {...fakePosts[0]} />));
+});
