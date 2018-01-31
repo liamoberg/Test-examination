@@ -3,7 +3,7 @@ node_js:
   - 8
 script:
   - npm build
-  - npm test -- --coverage && cat ./coverage/lcov.info | coveralls  
+  - npm test -- --coverage
 deploy:
     provider: pages
     skip_cleanup: true
