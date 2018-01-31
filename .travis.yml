@@ -2,12 +2,6 @@ language: node_js
 node_js:
   - 8
 script:
-  - npm build
   - npm test -- --coverage
-deploy:
-    provider: pages
-    skip_cleanup: true
-    local-dir: build
-    github_token: $GITHUB_TOKEN
 
-    
+ 
