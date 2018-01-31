@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Comments from '../components/Comments';
 import SingleComment from '../components/SingleComment';
 import CreateNewComment from '../components/CreateNewComment';
@@ -28,4 +28,12 @@ it('removeComment should call removeComment from API', () => {
     const wrapper = shallow(<Comments postId='1' currentPersona="zac" author="dsa" />);
     wrapper.instance().removeComment('1');
     expect(wrapper.instance().removeComment);
+});
+
+it('checks if onChange on a new comment sets values to state', () => {
+    const fakeFunction = jest.fn();
+    const wrapper = mount(<CreateNewComment postId='1' author='hej' updateComments={fakeFunction} />);
+    const message = {target: {name: 'comment', value:'kommentar'}};
+    wrapper.find('textarea[name="comment"]').simulate('change', message);
+    expect(wrapper.state().comment).toEqual('kommentar');
 });
