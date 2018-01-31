@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - 8
 script:
-  - yarn build
-  - yarn test -- --coverage && cat ./coverage/lcov.info | coveralls  
+  - npm build
+  - npm test -- --coverage && cat ./coverage/lcov.info | coveralls  
 deploy:
     provider: pages
     skip_cleanup: true
